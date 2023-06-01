@@ -29,16 +29,22 @@ class Segment:
         Метод возвращает True, если отрезок пересекает ось абцисс, иначе False
         :return: bool
         """
-
-        return self.y2 >= 0
+        if self.y1 < 0 < self.y2 or self.y2 < 0 < self.y1:
+            return True
+        else:
+            return False
+ #       return self.y2 >= 0
 
     def y_axis_intersection(self):
         """
         Метод возвращает True, если отрезок пересекает ось ординат, иначе False
         :return: bool
         """
-
-        return self.x1 <= 0
+        if self.x1 < 0 < self.x2 or self.x2 < 0 < self.x1:
+            return True
+        else:
+            return False
+ #       return self.x1 <= 0
 
 
 
