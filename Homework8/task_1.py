@@ -28,19 +28,16 @@ def treatment_sum(our_tuple):
     :param our_tuple: Получаем на вход 2 кортежа с числами.
     :return: Возвращаем результат сложения чисел в кортеже
     """
-    if len(our_tuple) > 2:
-        raise Exception('Много данных')
-    try:
-        tuple_sum = our_tuple[0] + our_tuple[1]
-        return tuple_sum
-    except TypeError:
-        return 'Нельзя сложить эти данные'
-    except ValueError as ValueErrorText:
-        return str(ValueErrorText)
-    except Exception as e:
-        if len(our_tuple) < 2:  # на случай, если в Exception попадёт исключение, не предусмотренное в задании
+    if len(our_tuple) < 3:
+        try:
+            return our_tuple[0] + our_tuple[1]
+        except TypeError:
+            return 'Нельзя сложить эти данные'
+        except IndexError:
             return 'Недостаточно данных'
-        raise e
+    else:
+        raise IndexError('Много данных')
+
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
