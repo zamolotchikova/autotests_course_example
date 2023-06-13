@@ -15,7 +15,8 @@ for i in file:
         purchase += int(i)
 
 purchases = sorted(purchases, reverse=True)
-# print(purchases)
+print(purchases)
 three_most_expensive_purchases = sum(purchases[:3])
+print(three_most_expensive_purchases)
 
 assert three_most_expensive_purchases == 202346
